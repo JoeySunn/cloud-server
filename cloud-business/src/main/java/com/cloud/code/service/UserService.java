@@ -1,9 +1,6 @@
 package com.cloud.code.service;
 
 import com.cloud.code.model.user.User;
-import com.cloud.code.model.user.UserDTO;
-import com.cloud.result.ResultBean;
-import com.cloud.service.BaseSevice;
 
 /**
  * 作用描述
@@ -17,14 +14,14 @@ import com.cloud.service.BaseSevice;
  * @UpdateRemark: The modified content
  * @Version: 1.0
  **/
-public interface UserService extends BaseSevice<User>{
+public interface UserService {
     /**
      * 验证用户名密码
      * @param userName
      * @param passWord
      * @return
      */
-    UserDTO validate(String userName, String passWord);
+    User validate(String userName, String passWord);
 
     /**
      * 添加一个用户

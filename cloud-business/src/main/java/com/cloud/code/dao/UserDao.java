@@ -3,6 +3,7 @@ package com.cloud.code.dao;
 
 import com.cloud.code.base.BaseDao;
 import com.cloud.code.model.user.User;
+import org.springframework.stereotype.Repository;
 
 /**
  * 作用描述

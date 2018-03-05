@@ -1,5 +1,7 @@
 package com.cloud.service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.lang.reflect.ParameterizedType;
 
 /**
@@ -14,10 +16,13 @@ import java.lang.reflect.ParameterizedType;
  * @UpdateRemark: The modified content
  * @Version: 1.0
  **/
-public class BaseServiceImpl<T> implements BaseSevice<T> {
-    public Class<?> clazz;
+public class BaseService<T> {
+    private Class<?> clazz;
 
-    public BaseServiceImpl (){
+    @PersistenceContext
+    protected EntityManager entityManager;
+
+    public BaseService(){
         ParameterizedType parameterizedType = (ParameterizedType) this.getClass().getGenericSuperclass();
         clazz=(Class<T>) (parameterizedType.getActualTypeArguments()[0]);
     }

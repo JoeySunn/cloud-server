@@ -1,5 +1,7 @@
 package com.cloud.code.model.user;
 
+import com.cloud.code.model.role.Role;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
@@ -20,6 +22,7 @@ import java.util.Date;
  **/
 @Entity
 @Table(name = "user")
+@ApiModel(description = "用户模型")
 public class User implements Serializable {
 
     @Id
@@ -51,9 +54,10 @@ public class User implements Serializable {
     @ApiModelProperty(value = "实体状态 0-正常 1-删除 2-禁用")
     private Integer state;
 
-    @Column(name ="role_id" )
-    @ApiModelProperty(value = "角色Id")
-    private Integer roleId;
+    @ManyToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE, CascadeType.MERGE}, fetch=FetchType.EAGER)
+    @JoinColumn(name = "role_id")
+    @ApiModelProperty(value = "对应角色")
+    private Role role;
 
     public Integer getId() {
         return id;
@@ -111,12 +115,12 @@ public class User implements Serializable {
         this.state = state;
     }
 
-    public Integer getRoleId() {
-        return roleId;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override
@@ -129,7 +133,7 @@ public class User implements Serializable {
                 ", passWord='" + passWord + '\'' +
                 ", createTime=" + createTime +
                 ", state=" + state +
-                ", roleId=" + roleId +
+                ", role=" + role +
                 '}';
     }
 }

@@ -1,21 +1,17 @@
 package com.cloud.code.service;
 
 import com.cloud.code.dao.UserDao;
+import com.cloud.code.model.role.QRole;
 import com.cloud.code.model.user.QUser;
 import com.cloud.code.model.user.User;
-import com.cloud.code.model.user.UserDTO;
 import com.cloud.enums.StatusEnum;
-import com.cloud.result.ResultBean;
+import com.cloud.service.BaseService;
 import com.querydsl.jpa.impl.JPAQuery;
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 /**
  * 作用描述
@@ -31,14 +27,11 @@ import javax.persistence.PersistenceContext;
  **/
 @Service
 @Transactional(rollbackFor = Exception.class)
-public class UserServiceImpl implements UserService {
-    private  BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(15);
+public class UserServiceImpl extends BaseService<User> implements UserService {
+    private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(15);
 
     @Resource
     private UserDao userDao;
-
-    @PersistenceContext
-    private EntityManager entityManager;
 
     private QUser qUser = QUser.user;
 
@@ -50,20 +43,25 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public UserDTO validate(String userName, String passWord) {
-        UserDTO userDTO = new UserDTO();
-        JPAQuery<User> jpaQuery = new JPAQuery<>(entityManager);
-        User user = jpaQuery.select(qUser)
+    public User validate(String userName, String passWord) {
+        User user = new JPAQuery<User>(entityManager).select(qUser)
                 .from(qUser)
+                .leftJoin(QRole.role)
+                .on(qUser.role.id.eq(QRole.role.id))
                 .where(
                         qUser.userName.eq(userName),
                         qUser.state.ne(StatusEnum.DELETE.getIndex())
                 )
                 .fetchOne();
-        if (user != null && encoder.matches(user.getPassWord(), passWord)) {
-            BeanUtils.copyProperties(user, userDTO);
+        if(user==null){
+            return null;
         }
-        return userDTO;
+        if (encoder.matches(user.getPassWord(), passWord)) {
+          return user;
+        }else{
+            user.setState(3);
+            return user;
+        }
     }
 
     /**
@@ -80,19 +78,20 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 用户名查询用户
+     *
      * @param name
      * @return
      */
     @Override
-    public User findUserByName(String name){
+    public User findUserByName(String name) {
         JPAQuery<User> jpaQuery = new JPAQuery<>(entityManager);
-        User user=jpaQuery.from(qUser)
+        User user = jpaQuery.from(qUser)
                 .where(
                         qUser.state.ne(StatusEnum.DELETE.getIndex()),
                         qUser.userName.eq(name)
                 )
                 .fetchOne();
-        if(user==null){
+        if (user == null) {
             return null;
         }
         return user;

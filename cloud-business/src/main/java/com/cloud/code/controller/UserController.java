@@ -1,6 +1,8 @@
 package com.cloud.code.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.cloud.code.model.role.Role;
+import com.cloud.code.service.RoleService;
 import com.cloud.constant.MessageConstant;
 import com.cloud.code.model.user.User;
 import com.cloud.code.service.UserService;
@@ -12,6 +14,7 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * 作用描述
@@ -33,13 +36,15 @@ public class UserController extends BaseController {
     @Resource
     private UserService userService;
 
+    @Resource
+    private RoleService roleService;
+
     @ApiOperation(value = "添加一个用户", httpMethod = "POST")
     @PostMapping("add_user")
     @ResponseBody
-    public JSONObject addUser(
-            @ApiParam(name = "user", value = "用户信息")
-            @RequestBody User user) {
+    public JSONObject addUser(@ApiParam(name = "user", value = "用户信息") @RequestBody User user) {
         if (userService.findUserByName(user.getUserName()) == null) {
+            user.setRole(roleService.findById(user.getRole().getId()));
             if (userService.addUser(user) != null) {
                 return JSONUtil.finalData(user, MessageConstant.INSERT_MESSAGE_OK, MessageConstant.OK);
             } else {

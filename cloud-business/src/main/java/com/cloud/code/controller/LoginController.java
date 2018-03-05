@@ -1,7 +1,7 @@
 package com.cloud.code.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.cloud.code.model.user.UserDTO;
+import com.cloud.code.model.user.User;
 import com.cloud.code.service.UserService;
 import com.cloud.controller.BaseController;
 import com.cloud.util.JSONUtil;
@@ -40,11 +40,11 @@ public class LoginController extends BaseController{
                             @RequestParam(value = "userName") String userName,
                             @ApiParam(name = "passWord", value = "密码")
                             @RequestParam(value = "passWord") String passWord) {
-        UserDTO userDTO=userService.validate(userName,passWord);
-        if(userDTO==null){
+        User user=userService.validate(userName,passWord);
+        if(user==null){
             resultBean.message("用户不存在！");
         }
-        resultBean.data(userDTO);
+        resultBean.data(user);
         return JSONUtil.parseResultBean(resultBean);
     }
 }
