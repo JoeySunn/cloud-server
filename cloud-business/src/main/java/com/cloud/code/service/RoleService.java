@@ -21,4 +21,11 @@ public interface RoleService {
      * @return
      */
     Role findById(Integer id);
+
+    /**
+     * 添加一个角色
+     * @param role
+     * @return
+     */
+    Role addRole(Role role);
 }

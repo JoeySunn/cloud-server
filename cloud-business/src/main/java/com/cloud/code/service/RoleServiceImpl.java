@@ -36,4 +36,15 @@ public class RoleServiceImpl extends BaseService<Role> implements RoleService {
     public Role findById(Integer id) {
         return roleDao.getOne(id);
     }
+
+    /**
+     * 添加一个角色
+     *
+     * @param role
+     * @return
+     */
+    @Override
+    public Role addRole(Role role) {
+        return roleDao.save(role);
+    }
 }

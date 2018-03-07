@@ -24,7 +24,7 @@ import java.util.Date;
 @ApiModel(description = "角色模型")
 public class Role  {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(value = "用户Id")
     private Integer id;
 

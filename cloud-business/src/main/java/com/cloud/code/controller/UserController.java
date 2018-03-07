@@ -46,7 +46,7 @@ public class UserController extends BaseController {
         if (userService.findUserByName(user.getUserName()) == null) {
             user.setRole(roleService.findById(user.getRole().getId()));
             if (userService.addUser(user) != null) {
-                return JSONUtil.finalData(user, MessageConstant.INSERT_MESSAGE_OK, MessageConstant.OK);
+                return JSONUtil.finalData(new User(), MessageConstant.INSERT_MESSAGE_OK, MessageConstant.OK);
             } else {
                 return JSONUtil.finalData(user, MessageConstant.INSERT_MESSAGE_ERROR, MessageConstant.ERROR);
             }
