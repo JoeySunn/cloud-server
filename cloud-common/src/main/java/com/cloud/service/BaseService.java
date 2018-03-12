@@ -1,6 +1,7 @@
 package com.cloud.service;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 import java.lang.reflect.ParameterizedType;
 
@@ -19,8 +20,6 @@ import java.lang.reflect.ParameterizedType;
 public class BaseService<T> {
     private Class<?> clazz;
 
-    @PersistenceContext
-    protected EntityManager entityManager;
 
     public BaseService(){
         ParameterizedType parameterizedType = (ParameterizedType) this.getClass().getGenericSuperclass();

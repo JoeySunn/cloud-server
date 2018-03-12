@@ -10,6 +10,7 @@
         <module>cloud-center</module>
         <module>cloud-business</module>
         <module>cloud-common</module>
+        <module>cloud-zuul</module>
     </modules>
     <packaging>pom</packaging>
 

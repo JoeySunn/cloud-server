@@ -22,41 +22,41 @@ import java.util.Date;
  **/
 @Entity
 @Table(name = "user")
-@ApiModel(description = "用户模型")
+@ApiModel(value = "user",description = "用户模型")
 public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(value = "用户Id")
+    @ApiModelProperty(value = "用户Id",name = "id")
     private Integer id;
 
     @Column(name = "user_name")
-    @ApiModelProperty(value = "用户名")
+    @ApiModelProperty(value = "用户名",name = "userName")
     private String userName;
 
     @Column(name = "name")
-    @ApiModelProperty(value = "真实姓名")
+    @ApiModelProperty(value = "真实姓名",name = "name")
     private String name;
 
     @Column(name = "mobile")
-    @ApiModelProperty(value = "手机号")
+    @ApiModelProperty(value = "手机号",name = "mobile")
     private String mobile;
 
     @Column(name = "pass_word")
-    @ApiModelProperty(value = "密码")
+    @ApiModelProperty(value = "密码",name = "passWord")
     private String passWord;
 
     @Column(name = "create_time")
-    @ApiModelProperty(value = "实体创建时间")
+    @ApiModelProperty(value = "实体创建时间",name = "createTime")
     private Date createTime;
 
     @Column(name = "state")
-    @ApiModelProperty(value = "实体状态 0-正常 1-删除 2-禁用")
+    @ApiModelProperty(value = "实体状态 0-正常 1-删除 2-禁用",name = "state")
     private Integer state;
 
     @ManyToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE, CascadeType.MERGE}, fetch=FetchType.EAGER)
     @JoinColumn(name = "role_id")
-    @ApiModelProperty(value = "对应角色")
+    @ApiModelProperty(value = "对应角色",name = "role")
     private Role role;
 
     public Integer getId() {

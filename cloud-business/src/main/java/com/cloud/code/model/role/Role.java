@@ -25,7 +25,7 @@ import java.util.Date;
 public class Role  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(value = "用户Id")
+    @ApiModelProperty(value = "角色Id")
     private Integer id;
 
     @Column(name = "create_time")

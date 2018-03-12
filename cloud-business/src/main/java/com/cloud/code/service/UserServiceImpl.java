@@ -1,12 +1,8 @@
 package com.cloud.code.service;
 
 import com.cloud.code.dao.UserDao;
-import com.cloud.code.model.role.QRole;
-import com.cloud.code.model.user.QUser;
 import com.cloud.code.model.user.User;
-import com.cloud.enums.StatusEnum;
 import com.cloud.service.BaseService;
-import com.querydsl.jpa.impl.JPAQuery;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,7 +29,6 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
     @Resource
     private UserDao userDao;
 
-    private QUser qUser = QUser.user;
 
     /**
      * 验证用户名密码
@@ -44,24 +39,27 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
      */
     @Override
     public User validate(String userName, String passWord) {
-        User user = new JPAQuery<User>(entityManager).select(qUser)
-                .from(qUser)
-                .leftJoin(QRole.role)
-                .on(qUser.role.id.eq(QRole.role.id))
-                .where(
-                        qUser.userName.eq(userName),
-                        qUser.state.ne(StatusEnum.DELETE.getIndex())
-                )
-                .fetchOne();
-        if(user==null){
-            return null;
-        }
-        if (encoder.matches(user.getPassWord(), passWord)) {
-          return user;
-        }else{
-            user.setState(3);
-            return user;
-        }
+//        QRole role=QRole.role;
+//        User user = new JPAQuery<User>(entityManager)
+//                .from(qUser,role)
+//                .leftJoin(role)
+//                .on(qUser.role.id.eq(role.id))
+//                .where(
+//                        qUser.userName.eq(userName),
+//                        qUser.state.ne(StatusEnum.DELETE.getIndex())
+//                )
+//                .fetchOne();
+//        if(user==null){
+//            return null;
+//        }
+//        if (encoder.matches(passWord,user.getPassWord())) {
+//          return user;
+//        }else{
+//            //密码不正确的状态
+//            user.setState(3);
+//            return user;
+//        }
+        return null;
     }
 
     /**
@@ -78,22 +76,22 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
 
     /**
      * 用户名查询用户
-     *
      * @param name
      * @return
      */
     @Override
     public User findUserByName(String name) {
-        JPAQuery<User> jpaQuery = new JPAQuery<>(entityManager);
-        User user = jpaQuery.from(qUser)
-                .where(
-                        qUser.state.ne(StatusEnum.DELETE.getIndex()),
-                        qUser.userName.eq(name)
-                )
-                .fetchOne();
-        if (user == null) {
-            return null;
-        }
-        return user;
+//        JPAQuery<User> jpaQuery = new JPAQuery<>(entityManager);
+//        User user = jpaQuery.from(qUser)
+//                .where(
+//                        qUser.state.ne(StatusEnum.DELETE.getIndex()),
+//                        qUser.userName.eq(name)
+//                )
+//                .fetchOne();
+//        if (user == null) {
+//            return null;
+//        }
+//        return user;
+        return null;
     }
 }

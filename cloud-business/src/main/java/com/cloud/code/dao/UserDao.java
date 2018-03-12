@@ -3,7 +3,7 @@ package com.cloud.code.dao;
 
 import com.cloud.code.base.BaseDao;
 import com.cloud.code.model.user.User;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * 作用描述
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
  * @UpdateRemark: The modified content
  * @Version: 1.0
  **/
-public interface UserDao extends BaseDao<User>{
+public interface UserDao extends BaseDao<User> {
     /**
      *
      * @param userName

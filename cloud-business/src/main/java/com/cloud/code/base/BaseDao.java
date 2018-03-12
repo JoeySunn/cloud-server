@@ -18,6 +18,6 @@ import org.springframework.data.repository.NoRepositoryBean;
  * @Version: 1.0
  **/
 @NoRepositoryBean
-public interface BaseDao<T> extends JpaRepository<T, Integer>,JpaSpecificationExecutor<T>,QueryDslPredicateExecutor<T> {
+public interface BaseDao<T> extends JpaRepository<T, Integer>{
 
 }

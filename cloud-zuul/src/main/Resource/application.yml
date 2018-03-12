@@ -1,0 +1,19 @@
+server:
+  port: 8003
+
+spring:
+  application:
+    name: cloud-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+zuul:
+  host:
+    #每个主机初始连接数
+    max-per-route-connections: 50
+  routes:
+    cloud-business: /business/**
+
+

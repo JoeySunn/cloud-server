@@ -2,6 +2,7 @@ package com.cloud.code.dao;
 
 import com.cloud.code.base.BaseDao;
 import com.cloud.code.model.role.Role;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * 作用描述
