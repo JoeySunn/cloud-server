@@ -54,10 +54,10 @@ public class User implements Serializable {
     @ApiModelProperty(value = "实体状态 0-正常 1-删除 2-禁用",name = "state")
     private Integer state;
 
-    @ManyToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE, CascadeType.MERGE}, fetch=FetchType.EAGER)
-    @JoinColumn(name = "role_id")
-    @ApiModelProperty(value = "对应角色",name = "role")
-    private Role role;
+//    @ManyToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE, CascadeType.MERGE}, fetch=FetchType.EAGER)
+//    @JoinColumn(name = "role_id")
+//    @ApiModelProperty(value = "对应角色",name = "role")
+//    private Role role;
 
     public Integer getId() {
         return id;
@@ -115,13 +115,13 @@ public class User implements Serializable {
         this.state = state;
     }
 
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
+//    public Role getRole() {
+//        return role;
+//    }
+//
+//    public void setRole(Role role) {
+//        this.role = role;
+//    }
 
     @Override
     public String toString() {
@@ -133,7 +133,6 @@ public class User implements Serializable {
                 ", passWord='" + passWord + '\'' +
                 ", createTime=" + createTime +
                 ", state=" + state +
-                ", role=" + role +
                 '}';
     }
 }

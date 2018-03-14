@@ -2,7 +2,7 @@ package com.cloud.code.service;
 
 import com.cloud.code.dao.UserDao;
 import com.cloud.code.model.user.User;
-import com.cloud.service.BaseService;
+import org.hibernate.SessionFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,11 +23,16 @@ import javax.annotation.Resource;
  **/
 @Service
 @Transactional(rollbackFor = Exception.class)
-public class UserServiceImpl extends BaseService<User> implements UserService {
+public class UserServiceImpl implements UserService {
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(15);
 
     @Resource
     private UserDao userDao;
+
+    private SessionFactory sessionFactory;
+
+
+
 
 
     /**
@@ -37,8 +42,8 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
      * @param passWord
      * @return
      */
-    @Override
-    public User validate(String userName, String passWord) {
+//    @Override
+//    public User validate(String userName, String passWord) {
 //        QRole role=QRole.role;
 //        User user = new JPAQuery<User>(entityManager)
 //                .from(qUser,role)
@@ -59,6 +64,20 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
 //            user.setState(3);
 //            return user;
 //        }
+//        return null;
+//    }
+
+    /**
+     * 验证用户名密码
+     *
+     * @param userName
+     * @param passWord
+     * @return
+     */
+
+
+    @Override
+    public User validate(String userName, String passWord) {
         return null;
     }
 
@@ -71,7 +90,7 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
     @Override
     public User addUser(User user) {
         user.setPassWord(encoder.encode(user.getPassWord()));
-        return userDao.save(user);
+        return new User();
     }
 
     /**
@@ -93,5 +112,10 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
 //        }
 //        return user;
         return null;
+    }
+
+    @Override
+    public User findUserById(Integer id) {
+        return userDao.findById(id);
     }
 }

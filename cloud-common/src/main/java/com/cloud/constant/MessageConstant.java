@@ -19,6 +19,10 @@ public class MessageConstant {
 
     public static final Boolean OK=true;
 
-    public static final Boolean ERROR=false;
+    public static final Boolean NO=false;
+
+    public static final String SUCCESS="success!";
+
+    public static final String ERROR="e";
 
 }

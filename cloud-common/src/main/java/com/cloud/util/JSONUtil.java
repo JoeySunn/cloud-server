@@ -98,5 +98,26 @@ public class JSONUtil {
         return JSONUtil.parseResultBean(resultBean.content(t, message, state));
     }
 
+    /**
+     * 错误消息返回
+     * @param message
+     * @return
+     */
+    public static JSONObject errorData(String message){
+        ResultBean<Object> resultBean = new ResultBean<>();
+        return JSONUtil.parseResultBean(resultBean.content(new Object(), message, false));
+    }
+
+    /**
+     * 信息正确返回
+     * @param t
+     * @param <T>
+     * @return
+     */
+    public static<T> JSONObject successData(T t){
+        ResultBean<Object> resultBean = new ResultBean<>();
+        return JSONUtil.parseResultBean(resultBean.content(new Object(), MessageConstant.SUCCESS, MessageConstant.NO));
+    }
+
 
 }

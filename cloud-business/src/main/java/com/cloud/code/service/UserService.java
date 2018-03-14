@@ -35,4 +35,6 @@ public interface UserService {
      * @return
      */
    User findUserByName(String name);
+
+   User findUserById(Integer id);
 }

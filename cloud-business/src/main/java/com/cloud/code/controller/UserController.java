@@ -44,13 +44,26 @@ public class UserController extends BaseController {
     @ResponseBody
     public JSONObject addUser(@ApiParam(name = "user", value = "用户信息") @RequestBody User user) {
         if (userService.findUserByName(user.getUserName()) == null) {
-            user.setRole(roleService.findById(user.getRole().getId()));
+//            user.setRole(roleService.findById(user.getRole().getId()));
             if (userService.addUser(user) != null) {
                 return JSONUtil.finalData(new User(), MessageConstant.INSERT_MESSAGE_OK, MessageConstant.OK);
             } else {
-                return JSONUtil.finalData(user, MessageConstant.INSERT_MESSAGE_ERROR, MessageConstant.ERROR);
+                return JSONUtil.finalData(user, MessageConstant.INSERT_MESSAGE_ERROR, MessageConstant.NO);
             }
         }
-        return JSONUtil.finalData(user, "已存在的用户名！", MessageConstant.ERROR);
+        return JSONUtil.finalData(user, "已存在的用户名！", MessageConstant.NO);
     }
+
+
+    @ApiOperation(value = "查询一个用户",httpMethod = "POST")
+    @PostMapping("get_user")
+    @ResponseBody
+    public JSONObject getUser(@ApiParam(name = "id", value = "用户Id") @RequestParam Integer id){
+         User user=userService.findUserById(id);
+         if(user!=null){
+            JSONUtil.successData(user);
+         }
+         return JSONUtil.errorData("用户不存在!");
+    }
+
 }
