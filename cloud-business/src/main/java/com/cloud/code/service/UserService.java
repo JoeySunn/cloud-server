@@ -36,5 +36,10 @@ public interface UserService {
      */
    User findUserByName(String name);
 
+    /**
+     * findUserById
+     * @param id
+     * @return
+     */
    User findUserById(Integer id);
 }

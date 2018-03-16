@@ -1,5 +1,12 @@
 package com.cloud.dao;
 
+import org.hibernate.Session;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.repository.NoRepositoryBean;
+
+import java.io.Serializable;
+
 /**
  * 作用描述
  *
@@ -12,5 +19,6 @@ package com.cloud.dao;
  * @UpdateRemark: The modified content
  * @Version: 1.0
  **/
-public interface BaseDao<T> {
+@NoRepositoryBean
+public interface BaseDao<T> extends JpaRepository<T,Integer>,JpaSpecificationExecutor<T> {
 }

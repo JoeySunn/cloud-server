@@ -22,7 +22,7 @@ import javax.annotation.Resource;
  **/
 @Service
 @Transactional(rollbackFor = Exception.class)
-public class RoleServiceImpl extends BaseService<Role> implements RoleService {
+public class RoleServiceImpl implements RoleService {
 
     @Resource
     private RoleDao roleDao;

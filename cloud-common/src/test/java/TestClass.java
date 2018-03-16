@@ -14,7 +14,7 @@ import com.cloud.query.Query;
  **/
 public class TestClass {
     public static void main(String[] args) {
-        Query<User> query=new Query<User>();
+
     }
 }
 

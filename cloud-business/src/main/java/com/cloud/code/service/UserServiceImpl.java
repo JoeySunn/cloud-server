@@ -1,13 +1,18 @@
 package com.cloud.code.service;
 
 import com.cloud.code.dao.UserDao;
+import com.cloud.code.model.role.Role;
 import com.cloud.code.model.user.User;
-import org.hibernate.SessionFactory;
+import com.cloud.enums.StatusEnum;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import javax.persistence.criteria.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 作用描述
@@ -24,15 +29,11 @@ import javax.annotation.Resource;
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl implements UserService {
-    private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(15);
+    private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10);
 
     @Resource
     private UserDao userDao;
 
-    private SessionFactory sessionFactory;
-
-
-
 
 
     /**
@@ -42,43 +43,32 @@ public class UserServiceImpl implements UserService {
      * @param passWord
      * @return
      */
-//    @Override
-//    public User validate(String userName, String passWord) {
-//        QRole role=QRole.role;
-//        User user = new JPAQuery<User>(entityManager)
-//                .from(qUser,role)
-//                .leftJoin(role)
-//                .on(qUser.role.id.eq(role.id))
-//                .where(
-//                        qUser.userName.eq(userName),
-//                        qUser.state.ne(StatusEnum.DELETE.getIndex())
-//                )
-//                .fetchOne();
-//        if(user==null){
-//            return null;
-//        }
-//        if (encoder.matches(passWord,user.getPassWord())) {
-//          return user;
-//        }else{
-//            //密码不正确的状态
-//            user.setState(3);
-//            return user;
-//        }
-//        return null;
-//    }
-
-    /**
-     * 验证用户名密码
-     *
-     * @param userName
-     * @param passWord
-     * @return
-     */
-
-
     @Override
     public User validate(String userName, String passWord) {
-        return null;
+        User user = userDao.findOne(new Specification<User>() {
+            @Override
+            public Predicate toPredicate(Root<User> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
+                Join<User, Role> join = root.join("role", JoinType.LEFT);
+                criteriaQuery.where(criteriaBuilder.and(
+                        criteriaBuilder.equal(root.get("userName"), userName),
+                        criteriaBuilder.notEqual(root.get("state"), StatusEnum.DELETE.getIndex()),
+                        criteriaBuilder.notEqual(root.get("role").get("state"), StatusEnum.DELETE.getIndex()),
+                        criteriaBuilder.equal(join.get("id"), root.get("role").get("id"))
+                ));
+                return criteriaQuery.getRestriction();
+            }
+        });
+        if (user == null) {
+            return null;
+        }
+        if (encoder.matches( user.getPassWord(),passWord)) {
+            return user;
+        } else {
+            //密码不正确的状态
+            user.setState(3);
+            return user;
+        }
+
     }
 
     /**
@@ -90,32 +80,37 @@ public class UserServiceImpl implements UserService {
     @Override
     public User addUser(User user) {
         user.setPassWord(encoder.encode(user.getPassWord()));
-        return new User();
+        return userDao.save(user);
     }
 
     /**
      * 用户名查询用户
+     *
      * @param name
      * @return
      */
     @Override
     public User findUserByName(String name) {
-//        JPAQuery<User> jpaQuery = new JPAQuery<>(entityManager);
-//        User user = jpaQuery.from(qUser)
-//                .where(
-//                        qUser.state.ne(StatusEnum.DELETE.getIndex()),
-//                        qUser.userName.eq(name)
-//                )
-//                .fetchOne();
-//        if (user == null) {
-//            return null;
-//        }
-//        return user;
-        return null;
+        User user=userDao.findOne(new Specification<User>() {
+            @Override
+            public Predicate toPredicate(Root<User> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
+                List<Predicate> predicates = new ArrayList<>();
+                if(!"".equals(name)){
+                    predicates.add(criteriaBuilder.equal(root.get("userName"), name));
+                }
+                predicates.add(criteriaBuilder.notEqual(root.get("state"), StatusEnum.DELETE.getIndex()));
+                Predicate[] p = new Predicate[predicates.size()];
+                return criteriaBuilder.and(predicates.toArray(p));
+            }
+        });
+        if (user == null) {
+            return null;
+        }
+        return user;
     }
 
     @Override
     public User findUserById(Integer id) {
-        return userDao.findById(id);
+        return userDao.findOne(id);
     }
 }

@@ -1,8 +1,9 @@
 package com.cloud.code.dao;
 
-import com.cloud.code.base.BaseDao;
 import com.cloud.code.model.role.Role;
+import com.cloud.dao.BaseDao;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  * 作用描述
@@ -16,5 +17,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @UpdateRemark: The modified content
  * @Version: 1.0
  **/
+@Repository
 public interface RoleDao extends BaseDao<Role> {
 }

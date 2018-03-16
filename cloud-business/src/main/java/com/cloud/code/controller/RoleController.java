@@ -41,7 +41,7 @@ public class RoleController {
         if(roleService.addRole(role)!=null){
             return JSONUtil.finalData(new Role(), MessageConstant.INSERT_MESSAGE_OK, MessageConstant.OK);
         }
-        return JSONUtil.finalData(null, MessageConstant.INSERT_MESSAGE_ERROR, MessageConstant.ERROR);
+        return JSONUtil.finalData(null, MessageConstant.INSERT_MESSAGE_ERROR, MessageConstant.NO);
     }
 
     @ApiOperation(value = "修改角色")

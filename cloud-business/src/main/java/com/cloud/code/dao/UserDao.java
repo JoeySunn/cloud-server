@@ -1,9 +1,9 @@
 package com.cloud.code.dao;
 
 
-import com.cloud.code.base.BaseDao;
 import com.cloud.code.model.user.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.cloud.dao.BaseDao;
+import org.springframework.stereotype.Repository;
 
 /**
  * 作用描述
@@ -17,6 +17,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @UpdateRemark: The modified content
  * @Version: 1.0
  **/
+@Repository
 public interface UserDao extends BaseDao<User> {
     /**
      *
@@ -24,6 +25,5 @@ public interface UserDao extends BaseDao<User> {
      * @return
      */
     User findUserByName(String userName);
-
 
 }

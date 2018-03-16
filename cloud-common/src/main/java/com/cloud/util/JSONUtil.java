@@ -109,7 +109,7 @@ public class JSONUtil {
     }
 
     /**
-     * 信息正确返回
+     * 没有错误，返回查询到的实体
      * @param t
      * @param <T>
      * @return

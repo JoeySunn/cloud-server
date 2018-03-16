@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+
 /**
  * 作用描述
  *
@@ -25,7 +27,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/login")
 @Api(value = "LoginController", description = "登陆验证")
-public class LoginController extends BaseController{
+public class LoginController extends BaseController {
 
     @Autowired
     private UserService userService;
@@ -40,8 +42,8 @@ public class LoginController extends BaseController{
                             @RequestParam(value = "userName") String userName,
                             @ApiParam(name = "passWord", value = "密码")
                             @RequestParam(value = "passWord") String passWord) {
-        User user=userService.validate(userName,passWord);
-        if(user==null){
+        User user = userService.validate(userName, passWord);
+        if (user == null) {
             resultBean.message("用户不存在！");
         }
         resultBean.data(user);
