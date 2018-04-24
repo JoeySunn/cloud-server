@@ -11,6 +11,7 @@
         <module>cloud-business</module>
         <module>cloud-common</module>
         <module>cloud-zuul</module>
+        <module>cloud-config</module>
     </modules>
     <packaging>pom</packaging>
 

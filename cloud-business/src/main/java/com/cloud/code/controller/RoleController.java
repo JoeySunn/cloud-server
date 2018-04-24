@@ -44,12 +44,12 @@ public class RoleController {
         return JSONUtil.finalData(null, MessageConstant.INSERT_MESSAGE_ERROR, MessageConstant.NO);
     }
 
+
     @ApiOperation(value = "修改角色")
     @PostMapping("update_role")
     @ResponseBody
     public JSONObject updateRole(@ApiParam(name = "role",value = "用户角色")
                                  @RequestBody Role role){
-
         return null;
     }
 }

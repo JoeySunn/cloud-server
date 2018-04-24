@@ -1,5 +1,3 @@
-import com.cloud.query.Query;
-
 /**
  * 作用描述
  *
@@ -15,9 +13,11 @@ import com.cloud.query.Query;
 public class TestClass {
     public static void main(String[] args) {
 
+
+    }
+
+    public void load(){
+        String filePath=getClass().getClassLoader().getResource("powerTree.json").toString();
     }
 }
 
-class User{
-
-}

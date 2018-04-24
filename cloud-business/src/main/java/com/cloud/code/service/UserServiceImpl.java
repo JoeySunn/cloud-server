@@ -29,6 +29,7 @@ import java.util.List;
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl implements UserService {
+
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10);
 
     @Resource
@@ -68,7 +69,6 @@ public class UserServiceImpl implements UserService {
             user.setState(3);
             return user;
         }
-
     }
 
     /**

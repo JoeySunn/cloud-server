@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: cloud-config
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:/properties/
+      label: master
+server:
+  port: 8004
+eureka:
+  client:
+    service-url:
+       defaultZone: http://localhost:8001/eureka/

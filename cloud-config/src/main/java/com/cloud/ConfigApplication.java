@@ -1,12 +1,9 @@
 package com.cloud;
 
-import org.hibernate.SessionFactory;
-import org.hibernate.jpa.HibernateEntityManagerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.annotation.Bean;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * 作用描述
@@ -15,16 +12,16 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @Package: com.cloud
  * @Description: 作用描述
  * @Author: 钱佳豪
- * @CreateDate: 2018/2/9 13:53
- * @UpdateDate: 2018/2/9 13:53
+ * @CreateDate: 2018/4/23 11:34
+ * @UpdateDate: 2018/4/23 11:34
  * @UpdateRemark: The modified content
  * @Version: 1.0
  **/
 @SpringBootApplication
+@EnableConfigServer
 @EnableEurekaClient
-@EnableTransactionManagement
-public class BusinessApplication {
+public class ConfigApplication {
     public static void main(String[] args) {
-        SpringApplication.run(BusinessApplication.class,args);
+        SpringApplication.run(ConfigApplication.class,args);
     }
 }
