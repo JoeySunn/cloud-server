@@ -1,5 +1,6 @@
 package com.cloud.code.model.json;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,7 +23,7 @@ public class LeftTree {
 
     private String funname;
 
-    private List<LeftTree> tree;
+    private List<LeftTree> tree=new ArrayList<>();
 
     private String type;
 

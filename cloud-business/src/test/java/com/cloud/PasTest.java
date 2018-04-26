@@ -4,19 +4,17 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.cloud.code.model.json.LeftTree;
+import com.cloud.code.model.user.User;
 import com.cloud.code.service.UserService;
-import com.cloud.enums.CharseNameEnum;
-import com.cloud.exception.CloudException;
+import com.cloud.util.FileUtil;
+import com.cloud.util.JSONUtil;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.util.ResourceUtils;
 
 import javax.annotation.Resource;
-import java.io.*;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,54 +46,21 @@ public class PasTest {
 
     private LeftTree leftTree;
 
+    private JSONObject contentObject;
+
     @Test
     public void findByUser() {
-
-        //System.out.println(getFileContent(path));
-//        String code = "company";
-////        List<RoleTree> roleList = new ArrayList<>();
-//        User user = userService.findUserById(1);
-////        List<LeftTree> leftTrees = getLeftTree(code, (JSONArray) JSON.parse(user.getRole().getRoleCode()), roles);
-//        getLeftTree(code, (JSONArray) JSON.parse(user.getRole().getRoleCode()));
-//        System.out.println("----------------------------------------" + leftTrees);
-//        Assert.assertNotNull(leftTrees);
-    }
-
-
-    /**
-     * 获取文件内容
-     * @param path
-     * @return
-     */
-    public String getFileContent(String path){
-        ClassPathResource classPathResource=new ClassPathResource("properties/powerTree.json");
-        InputStream inputStream=null;
-        BufferedReader bufferedReader=null;
-        String b ;
-        StringBuffer stringBuffer=new StringBuffer();
-        try {
-            inputStream= classPathResource.getInputStream();
-            bufferedReader=  new BufferedReader(new InputStreamReader(inputStream,CharseNameEnum.UTF_8.getCharName()));
-            while ((b=bufferedReader.readLine())!=null){
-                stringBuffer.append(b);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
-            try {
-                if(inputStream!=null){
-                    inputStream.close();
-                }
-                if(bufferedReader!=null){
-                    bufferedReader.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        }
-        System.out.println(stringBuffer);
-        return "";
+        String content = FileUtil.getFileContent("properties/powerTree.json");
+        String code = "company";
+        String code1="order";
+        String code2="product";
+        String code3="statements";
+        String code4="config";
+//        List<RoleTree> roleList = new ArrayList<>();
+        User user = userService.findUserById(1);
+//        List<LeftTree> leftTrees = getLeftTree(code, (JSONArray) JSON.parse(user.getRole().getRoleCode()), roles);
+        getLeftTree(code, JSONUtil.getJSONArray(user.getRole().getRoleCode()));
+        Assert.assertNotNull(leftTrees);
     }
 
 
@@ -104,55 +69,109 @@ public class PasTest {
      *
      * @return
      */
-    private void getLeftTree(String code, Object roleObj) {
-        //第一步，取到标题级
-        JSONArray jsonArray = (JSONArray) roleObj;
-        //第二步，进行遍历
-        for (Object obj : jsonArray) {
-            JSONObject jsonObject = (JSONObject) obj;
-            /*
-             *在遍历中进行判断是否和Code值相等(这里的Code是前端传来的标题级的fcode，
-             */
-            if (code.equals(jsonObject.getString("fcode"))) {
-                /*
-                 *如果比对上，说明就是这一级，然后再进行遍历,从大标题下取得这个角色
-                 *左侧有多少个LeftMenu),这里可以直接传标题下的tree，转换成一个JSON
-                 *数组
-                 */
-                leftTrees(JSON.parseArray(jsonObject.getString("tree")));
-            }
-        }
-    }
-
-    private void leftTrees(Object object) {
-        //这里取到的就是标题级下的JSON数组，可以进行递归遍历
+    private void getLeftTree(String code, Object object) {
         JSONArray jsonArray = (JSONArray) object;
         for (Object obj : jsonArray) {
             JSONObject jsonObject = (JSONObject) obj;
-            leftTrees.add(setTree(jsonObject));
-            addTree(jsonObject, leftTrees);
-            if (haveTree(jsonObject) != null) {
-                leftTrees(JSON.parseArray(jsonObject.getString("tree")));
+            if (code.equals(jsonObject.getString("fcode"))) {
+                setLeftMenu(JSON.parseArray(jsonObject.getString("tree")));
+                break;
             }
         }
+    }
+
+    void setLeftMenu(JSONArray jsonArray) {
+         for(Object object: jsonArray){
+             JSONObject jsonObject= (JSONObject) object;
+             leftTrees.add(setTree(jsonObject));
+         }
+        addTee(leftTrees,jsonArray);
 
     }
 
-    void addTree(JSONObject jsonObject, List<LeftTree> trees) {
-
+    void addTee(List<LeftTree> trees,JSONArray jsonArray){
+         for(LeftTree tree:trees){
+             /*
+              *这里应该是要传入一个fcode，然后返回这个fcode对应的JSONObject
+              * jsonObject下有对应的Trees或者没有下一级权限
+              */
+             getContentObject(tree,jsonArray);
+         }
     }
 
-
-    void setLeftMenu(String code, List<LeftTree> trees) {
-        for (LeftTree leftTree : trees) {
-            if (leftTree.getFcode().equals(code)) {
-                leftTree.getTree().add(leftTree);
-            } else {
-                setLeftMenu(code, leftTree.getTree());
+    void getContentObject(LeftTree leftTree,JSONArray jsonArray){
+        for(Object object:jsonArray){
+            JSONObject jsonObject= (JSONObject) object;
+            if(leftTree.getFcode().equals(jsonObject.getString("fcode"))){
+                 if(JSON.parseArray(jsonObject.getString("tree"))!=null){
+                     for(Object o: JSON.parseArray(jsonObject.getString("tree"))){
+                         JSONObject tree= (JSONObject) o;
+                         LeftTree leftTree1=setTree(tree);
+                         leftTree.getTree().add(leftTree1);
+                         getContentObject(leftTree1,JSON.parseArray(jsonObject.getString("tree")));
+                     }
+                 }
+                 if(JSON.parseArray(jsonObject.getString("power"))!=null && !leftTree.getFcode().equals(jsonObject.getString("fcode"))){
+                     leftTree.getTree().add(setTree(jsonObject));
+                 }
             }
         }
-
     }
+
+
+
+
+    private JSONObject eachContent(String code, Object object) {
+        JSONArray jsonArray = (JSONArray) object;
+        for (Object leftObj : jsonArray) {
+            JSONObject jsonObject = (JSONObject) leftObj;
+            if (code.equals(jsonObject.getString("fcode"))) {
+                return jsonObject;
+            }
+        }
+        return null;
+    }
+
+
+    //private void leftTrees(Object object) {
+    //    JSONArray jsonArray = (JSONArray) object;
+    //    for (Object obj : jsonArray) {
+    //        JSONObject jsonObject = (JSONObject) obj;
+    //        setLeftMenu(jsonObject, null);
+    //        if (haveTree(jsonObject) != null) {
+    //            leftTrees(JSON.parseArray(jsonObject.getString("tree")));
+    //        }
+    //    }
+    //    ////这里取到的就是标题级下的JSON数组，可以进行递归遍历
+    //    //JSONArray jsonArray = (JSONArray) object;
+    //    //List<LeftTree> lefts=new ArrayList<>();
+    //    //for (Object obj : jsonArray) {
+    //    //    JSONObject jsonObject = (JSONObject) obj;
+    //    //    lefts.add(setTree(jsonObject));
+    //    //    addTree(jsonObject, lefts);
+    //    //    if (haveTree(jsonObject) != null) {
+    //    //        codeMap.put("fcode",jsonObject.getString("fcode"));
+    //    //        leftTrees(JSON.parseArray(jsonObject.getString("tree")));
+    //    //    }
+    //    //}
+    //}
+
+
+    //void addTree(JSONObject jsonObject, List<LeftTree> trees) {
+    //    String code = codeMap.get("fcode");
+    //    //如果这里是Null,那么说明没有Tree，这个JSONObject所处层级就是最后一级
+    //    if (code != null) {
+    //        //比对Fcode
+    //        for (LeftTree leftTree : leftTrees) {
+    //            if (code.equals(leftTree.getFcode())) {
+    //                leftTree.getTree().add(setTree(jsonObject));
+    //            } else {
+    //                addTree(jsonObject, leftTree.getTree());
+    //            }
+    //        }
+    //    }
+    //
+    //}
 
 
 //    List<LeftTree> leftTrees(JSONObject object) {
@@ -183,7 +202,7 @@ public class PasTest {
      * @param jsonObject
      * @return
      */
-    public LeftTree setTree(JSONObject jsonObject) {
+     LeftTree setTree(JSONObject jsonObject) {
         LeftTree leftTree = new LeftTree();
         if (!"".equals(jsonObject.getString("fcode"))) {
             leftTree.setFcode(jsonObject.getString("fcode"));

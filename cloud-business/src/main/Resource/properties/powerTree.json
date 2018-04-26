@@ -1,105 +1,105 @@
 [
     {
-        "title":"�̻�",
+        "title":"商户",
         "fcode":"company",
         "funname":"",
         "tree":[
             {
-                "title":"�̻��б�",
+                "title":"商户列表",
                 "fcode":"companyList",
                 "type":"icon",
                 "funname":"companyList()",
                 "power":[
                     {
-                        "title":"��ѯ",
+                        "title":"查询",
                         "fcode":"companyList_query"
                     },
                     {
-                        "title":"�༭",
+                        "title":"编辑",
                         "fcode":"companyList_edit",
                         "power":[
                             {
-                                "title":"�޸�",
+                                "title":"修改",
                                 "fcode":"companyList_edit_modify"
                             },
                             {
-                                "title":"���",
+                                "title":"审核",
                                 "fcode":"companyList_edit_exam"
                             }
                         ]
                     },
                     {
-                        "title":"����",
+                        "title":"禁用",
                         "fcode":"companyList_disabled"
                     },
                     {
-                        "title":"�������",
+                        "title":"解除禁用",
                         "fcode":"companyList_enabled"
                     },
                     {
-                        "title":"��ΪVIP",
+                        "title":"设为VIP",
                         "fcode":"companyList_becomeVIP"
                     },
                     {
-                        "title":"�鿴",
+                        "title":"查看",
                         "fcode":"companyList_show"
                     }
                 ]
             },
             {
-                "title":"��Ʒ����",
+                "title":"产品合作",
                 "type":"icon",
                 "fcode":"productCoopera",
                 "tree":[
                     {
-                        "title":"��Ʒ�ƹ�",
+                        "title":"产品推广",
                         "type":"dropDown",
                         "fcode":"productExpand",
                         "tree":[
                             {
-                                "title":"�̻��ƹ㵥",
+                                "title":"商户推广单",
                                 "type":"option",
                                 "fcode":"companyExpand",
                                 "funname":"companyExpand()",
                                 "power":[
                                     {
-                                        "title":"��ѯ",
+                                        "title":"查询",
                                         "fcode":"companyExpand_query"
                                     },
                                     {
-                                        "title":"�������",
+                                        "title":"结算费率",
                                         "fcode":"companyExpand_rate"
                                     },
                                     {
-                                        "title":"��������",
+                                        "title":"结算类型",
                                         "fcode":"companyExpand_balType"
                                     }
                                 ]
                             },
                             {
-                                "title":"�̻�����",
+                                "title":"商户意向单",
                                 "fcode":"companyWill",
                                 "type":"option",
                                 "funname":"companyWill()",
                                 "power":[
                                     {
-                                        "title":"��ѯ",
+                                        "title":"查询",
                                         "fcode":"companyWill_query"
                                     },
                                     {
-                                        "title":"����",
+                                        "title":"跟进",
                                         "fcode":"companyWill_follow"
                                     },
                                     {
-                                        "title":"�ѽ��",
+                                        "title":"已解决",
                                         "fcode":"companyWill_solve"
                                     },
                                     {
-                                        "title":"�ر�",
+                                        "title":"关闭",
                                         "fcode":"companyWill_close"
                                     },
                                     {
-                                        "title":"�鿴",
+                                        "title":"查看",
                                         "fcode":"companyWill_log"
                                     }
                                 ]
@@ -107,41 +107,41 @@
                         ]
                     },
                     {
-                        "title":"��Ʒ����",
+                        "title":"产品定制",
                         "fcode":"productMade",
                         "type":"default",
                         "funname":"productMade()",
                         "power":[
                             {
-                                "title":"��ѯ",
+                                "title":"查询",
                                 "fcode":"productMade_query"
                             },
                             {
-                                "title":"�������",
+                                "title":"结算费率",
                                 "fcode":"productMade_rate"
                             },
                             {
-                                "title":"��������",
+                                "title":"结算类型",
                                 "fcode":"productMade_balType"
                             },
                             {
-                                "title":"ɾ����¼",
+                                "title":"删除记录",
                                 "fcode":"productMade_delete"
                             },
                             {
-                                "title":"������¼",
+                                "title":"新增记录",
                                 "fcode":"productMade_add"
                             },
                             {
-                                "title":"��ǩԼ",
+                                "title":"已签约",
                                 "fcode":"productMade_sign"
                             },
                             {
-                                "title":"�Ѷ���",
+                                "title":"已定制",
                                 "fcode":"productMade_custom"
                             },
                             {
-                                "title":"����",
+                                "title":"驳回",
                                 "fcode":"productMade_reject"
                             }
                         ]
@@ -151,63 +151,63 @@
         ]
     },
     {
-        "title":"����",
+        "title":"订单",
         "fcode":"order",
         "funname":"",
         "tree":[
             {
-                "title":"����",
+                "title":"订单",
                 "type":"iocn",
                 "fcode":"userOrder",
                 "tree":[
                     {
-                        "title":"�����б�",
+                        "title":"订单列表",
                         "fcode":"orderLists",
                         "type":"default",
                         "funname":"orderList()",
                         "power":[
                             {
-                                "title":"��ѯ",
+                                "title":"查询",
                                 "fcode":"orderLists_query"
                             },
                             {
-                                "title":"����excel",
+                                "title":"导出excel",
                                 "fcode":"orderLists_export"
                             },
                             {
-                                "title":"�鿴",
+                                "title":"查看",
                                 "fcode":"orderLists_show"
                             }
                         ]
                     },
                     {
-                        "title":"�û�����",
+                        "title":"用户订单",
                         "type":"default",
                         "fcode":"insOrderLists",
                         "funname":"insOrderList()",
                         "power":[
                             {
-                                "title":"��ѯ",
+                                "title":"查询",
                                 "fcode":"insOrderLists_query"
                             },
                             {
-                                "title":"����excel",
+                                "title":"导出excel",
                                 "fcode":"insOrderLists_export"
                             },
                             {
-                                "title":"�鿴",
+                                "title":"查看",
                                 "fcode":"insOrderLists_show"
                             }
                         ]
                     },
                     {
-                        "title":"H5ҳ������",
+                        "title":"H5页面点击量",
                         "type":"default",
                         "fcode":"linkOrderLists",
                         "funname":"linkOrderList()",
                         "power":[
                             {
-                                "title":"��ѯ",
+                                "title":"查询",
                                 "fcode":"linkOrderList_query"
                             }
                         ]
@@ -217,67 +217,67 @@
         ]
     },
     {
-        "title":"��Ʒ",
+        "title":"产品",
         "fcode":"product",
         "funname":"",
         "tree":[
             {
-                "title":"��Ŀ����",
+                "title":"类目管理",
                 "type":"iocn",
                 "fcode":"classManage",
                 "tree":[
                     {
-                        "title":"��Ʒ��Ŀ",
+                        "title":"产品类目",
                         "type":"default",
                         "fcode":"productClass",
                         "funname":"productClass()",
                         "power":[
                             {
-                                "title":"���",
+                                "title":"添加",
                                 "fcode":"productClass_add"
                             },
                             {
-                                "title":"ɾ��",
+                                "title":"删除",
                                 "fcode":"productClass_delete"
                             },
                             {
-                                "title":"����",
+                                "title":"禁用",
                                 "fcode":"productClass_disabled"
                             },
                             {
-                                "title":"�������",
+                                "title":"解除禁用",
                                 "fcode":"productClass_enabled"
                             },
                             {
-                                "title":"�༭",
+                                "title":"编辑",
                                 "fcode":"productClass_edit"
                             }
                         ]
                     },
                     {
-                        "title":"��ҵ����",
+                        "title":"行业场景",
                         "type":"default",
                         "fcode":"sceneClass",
                         "funname":"sceneClass()",
                         "power":[
                             {
-                                "title":"���",
+                                "title":"添加",
                                 "fcode":"sceneClass_add"
                             },
                             {
-                                "title":"ɾ��",
+                                "title":"删除",
                                 "fcode":"sceneClass_delete"
                             },
                             {
-                                "title":"����",
+                                "title":"禁用",
                                 "fcode":"sceneClass_disabled"
                             },
                             {
-                                "title":"�������",
+                                "title":"解除禁用",
                                 "fcode":"sceneClass_enabled"
                             },
                             {
-                                "title":"�༭",
+                                "title":"编辑",
                                 "fcode":"sceneClass_edit"
                             }
                         ]
@@ -285,130 +285,130 @@
                 ]
             },
             {
-                "title":"��Ʒ�б�",
+                "title":"产品列表",
                 "type":"iocn",
                 "fcode":"productList",
                 "tree":[
                     {
-                        "title":"��Ȩ��Ʒ",
+                        "title":"授权产品",
                         "type":"default",
                         "fcode":"authProduct",
                         "funname":"authProduct()",
                         "power":[
                             {
-                                "title":"��ѯ",
+                                "title":"查询",
                                 "fcode":"authProduct_query"
                             },
                             {
-                                "title":"�������",
+                                "title":"结算费率",
                                 "fcode":"productMade_rate"
                             },
                             {
-                                "title":"�ϼ�",
+                                "title":"上架",
                                 "fcode":"authProduct_shelves"
                             },
                             {
-                                "title":"�¼�",
+                                "title":"下架",
                                 "fcode":"authProduct_unShelf"
                             },
                             {
-                                "title":"�Ƽ�",
+                                "title":"推荐",
                                 "fcode":"authProduct_setRecom"
                             },
                             {
-                                "title":"�鿴",
+                                "title":"查看",
                                 "fcode":"authProduct_show"
                             }
                         ]
                     },
                     {
-                        "title":"��Ʒ��",
+                        "title":"产品库",
                         "type":"default",
                         "fcode":"productLib",
                         "funname":"productLib()",
                         "power":[
                             {
-                                "title":"��ѯ",
+                                "title":"查询",
                                 "fcode":"productLib_query"
                             },
                             {
-                                "title":"��ȡ",
+                                "title":"拉取",
                                 "fcode":"productLib_pull"
                             },
                             {
-                                "title":"������Ȩ",
+                                "title":"批量授权",
                                 "fcode":"productLib_authBat"
                             },
                             {
-                                "title":"��Ȩ",
+                                "title":"授权",
                                 "fcode":"productLib_auth"
                             },
                             {
-                                "title":"ȡ����Ȩ",
+                                "title":"取消授权",
                                 "fcode":"productLib_authCancel"
                             },
                             {
-                                "title":"��Ʒ��Ϣ",
+                                "title":"产品信息",
                                 "fcode":"authProduct_editInfo"
                             },
                             {
-                                "title":"����˵��",
+                                "title":"条款说明",
                                 "fcode":"authProduct_editClause"
                             },
                             {
-                                "title":"���Ϸ���",
+                                "title":"保障方案",
                                 "fcode":"authProduct_config",
                                 "power":[
                                     {
-                                        "title":"��Ŀ�鿴",
+                                        "title":"项目查看",
                                         "fcode":"authProduct_config_item_config",
                                         "power":[
                                             {
-                                                "title":"������¼",
+                                                "title":"新增记录",
                                                 "fcode":"authProduct_config_item_config_add"
                                             },
                                             {
-                                                "title":"�༭",
+                                                "title":"编辑",
                                                 "fcode":"authProduct_config_item_config_edit"
                                             },
                                             {
-                                                "title":"ɾ��",
+                                                "title":"删除",
                                                 "fcode":"authProduct_config_item_config_delete"
                                             }
                                         ]
                                     },
                                     {
-                                        "title":"��Ŀ����",
+                                        "title":"项目复制",
                                         "fcode":"authProduct_config_item_copy"
                                     },
                                     {
-                                        "title":"���Ա༭",
+                                        "title":"属性编辑",
                                         "fcode":"authProduct_config_attr_edit"
                                     },
                                     {
-                                        "title":"���Բ鿴",
+                                        "title":"属性查看",
                                         "fcode":"authProduct_config_attr_show"
                                     },
                                     {
-                                        "title":"���Ѳ鿴",
+                                        "title":"保费查看",
                                         "fcode":"authProduct_config_premium_config",
                                         "power":[
                                             {
-                                                "title":"������¼",
+                                                "title":"新增记录",
                                                 "fcode":"authProduct_config_premium_config_add"
                                             },
                                             {
-                                                "title":"�༭",
+                                                "title":"编辑",
                                                 "fcode":"authProduct_config_premium_config_edit"
                                             },
                                             {
-                                                "title":"ɾ��",
+                                                "title":"删除",
                                                 "fcode":"authProduct_config_premium_config_delete"
                                             }
                                         ]
                                     },
                                     {
-                                        "title":"���Ѹ���",
+                                        "title":"保费复制",
                                         "fcode":"authProduct_config_premium_copy"
                                     }
                                 ]
@@ -420,113 +420,113 @@
         ]
     },
     {
-        "title":"����",
+        "title":"结算",
         "fcode":"statements",
         "funname":"",
         "tree":[
             {
-                "title":"�������",
+                "title":"结算管理",
                 "type":"iocn",
                 "fcode":"statemManage",
                 "tree":[
                     {
-                        "title":"���չ�˾",
+                        "title":"保险公司",
                         "type":"select",
                         "fcode":"manageIns",
                         "tree":[
                             {
-                                "title":"����",
+                                "title":"收入",
                                 "type":"dropDown",
                                 "fcode":"insIn",
                                 "tree":[
                                     {
-                                        "title":"���͹�˾",
+                                        "title":"经纪公司",
                                         "type":"option",
                                         "fcode":"insInBrokers",
                                         "funname":"insInBrokers()",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"insInBrokers_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"insInBrokers_export"
                                             },
                                             {
-                                                "title":"�鿴��ϸ",
+                                                "title":"查看明细",
                                                 "fcode":"insInBrokers_detailed",
                                                 "power":[
                                                     {
-                                                        "title":"��ѯ",
+                                                        "title":"查询",
                                                         "fcode":"insInBrokers_detailed_query"
                                                     },
                                                     {
-                                                        "title":"����excel",
+                                                        "title":"导出excel",
                                                         "fcode":"insInBrokers_detailed_export"
                                                     },
                                                     {
-                                                        "title":"���������˵�",
+                                                        "title":"计入下期账单",
                                                         "fcode":"insInBrokers_detailed_entNext"
                                                     }
                                                 ]
                                             },
                                             {
-                                                "title":"ȷ�϶���",
+                                                "title":"确认对账",
                                                 "fcode":"insInBrokers_confirmRec"
                                             },
                                             {
-                                                "title":"ȷ�Ͽ�Ʊ",
+                                                "title":"确认开票",
                                                 "fcode":"insInBrokers_Bill"
                                             },
                                             {
-                                                "title":"ȷ���տ�",
+                                                "title":"确认收款",
                                                 "fcode":"insInBrokers_receivMoney"
                                             }
                                         ]
                                     },
                                     {
-                                        "title":"�̻�",
+                                        "title":"商户",
                                         "type":"option",
                                         "fcode":"insInCom",
                                         "funname":"insInCom()",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"insInCom_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"insInCom_export"
                                             },
                                             {
-                                                "title":"�鿴��ϸ",
+                                                "title":"查看明细",
                                                 "fcode":"insInCom_detailed",
                                                 "power":[
                                                     {
-                                                        "title":"��ѯ",
+                                                        "title":"查询",
                                                         "fcode":"insInCom_detailed_query"
                                                     },
                                                     {
-                                                        "title":"����excel",
+                                                        "title":"导出excel",
                                                         "fcode":"insInCom_detailed_export"
                                                     },
                                                     {
-                                                        "title":"���������˵�",
+                                                        "title":"计入下期账单",
                                                         "fcode":"insInCom_detailed_entNext"
                                                     }
                                                 ]
                                             },
                                             {
-                                                "title":"ȷ�϶���",
+                                                "title":"确认对账",
                                                 "fcode":"insInCom_confirmRec"
                                             },
                                             {
-                                                "title":"ȷ�Ͽ�Ʊ",
+                                                "title":"确认开票",
                                                 "fcode":"insInCom_Bill"
                                             },
                                             {
-                                                "title":"ȷ���տ�",
+                                                "title":"确认收款",
                                                 "fcode":"insInCom_receivMoney"
                                             }
                                         ]
@@ -534,156 +534,156 @@
                                 ]
                             },
                             {
-                                "title":"֧��",
+                                "title":"支出",
                                 "type":"dropDown",
                                 "fcode":"insExp",
                                 "tree":[
                                     {
-                                        "title":"���͹�˾",
+                                        "title":"经纪公司",
                                         "type":"option",
                                         "fcode":"insExpBrokers",
                                         "funname":"insExpBrokers()",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"insExpBrokers_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"insExpBrokers_export"
                                             },
                                             {
-                                                "title":"�鿴��ϸ",
+                                                "title":"查看明细",
                                                 "fcode":"insExpBrokers_detailed",
                                                 "power":[
                                                     {
-                                                        "title":"��ѯ",
+                                                        "title":"查询",
                                                         "fcode":"insExpBrokers_detailed_query"
                                                     },
                                                     {
-                                                        "title":"����excel",
+                                                        "title":"导出excel",
                                                         "fcode":"insExpBrokers_detailed_export"
                                                     },
                                                     {
-                                                        "title":"���������˵�",
+                                                        "title":"计入下期账单",
                                                         "fcode":"insExpBrokers_detailed_entNext"
                                                     }
                                                 ]
                                             },
                                             {
-                                                "title":"ȷ�϶���",
+                                                "title":"确认对账",
                                                 "fcode":"insExpBrokers_confirmRec"
                                             },
                                             {
-                                                "title":"��Ʊ��Ϣ",
+                                                "title":"发票信息",
                                                 "fcode":"insExpBrokers_invoice"
                                             },
                                             {
-                                                "title":"ȷ����Ʊ",
+                                                "title":"确认收票",
                                                 "fcode":"insExpBrokers_confirmReceipt"
                                             },
                                             {
-                                                "title":"ȷ�ϴ��",
+                                                "title":"确认打款",
                                                 "fcode":"insExpBrokers_confirmMoney"
                                             }
                                         ]
                                     },
                                     {
-                                        "title":"ƽ̨",
+                                        "title":"平台",
                                         "type":"option",
                                         "fcode":"insExpPlat",
                                         "funname":"insExpPlat()",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"insExpPlat_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"insExpPlat_export"
                                             },
                                             {
-                                                "title":"�鿴��ϸ",
+                                                "title":"查看明细",
                                                 "fcode":"insExpPlat_detailed",
                                                 "power":[
                                                     {
-                                                        "title":"��ѯ",
+                                                        "title":"查询",
                                                         "fcode":"insExpPlat_detailed_query"
                                                     },
                                                     {
-                                                        "title":"����excel",
+                                                        "title":"导出excel",
                                                         "fcode":"insExpPlat_detailed_export"
                                                     },
                                                     {
-                                                        "title":"���������˵�",
+                                                        "title":"计入下期账单",
                                                         "fcode":"insExpPlat_detailed_entNext"
                                                     }
                                                 ]
                                             },
                                             {
-                                                "title":"ȷ�϶���",
+                                                "title":"确认对账",
                                                 "fcode":"insExpPlat_confirmRec"
                                             },
                                             {
-                                                "title":"��Ʊ��Ϣ",
+                                                "title":"发票信息",
                                                 "fcode":"insExpPlat_invoice"
                                             },
                                             {
-                                                "title":"ȷ����Ʊ",
+                                                "title":"确认收票",
                                                 "fcode":"insExpPlat_confirmReceipt"
                                             },
                                             {
-                                                "title":"ȷ�ϴ��",
+                                                "title":"确认打款",
                                                 "fcode":"insExpPlat_confirmMoney"
                                             }
                                         ]
                                     },
                                     {
-                                        "title":"�̻�",
+                                        "title":"商户",
                                         "type":"option",
                                         "fcode":"insExpCom",
                                         "funname":"insExpCom()",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"insExpCom_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"insExpCom_export"
                                             },
                                             {
-                                                "title":"�鿴��ϸ",
+                                                "title":"查看明细",
                                                 "fcode":"insExpCom_detailed",
                                                 "power":[
                                                     {
-                                                        "title":"��ѯ",
+                                                        "title":"查询",
                                                         "fcode":"insExpCom_detailed_query"
                                                     },
                                                     {
-                                                        "title":"����excel",
+                                                        "title":"导出excel",
                                                         "fcode":"insExpCom_detailed_export"
                                                     },
                                                     {
-                                                        "title":"���������˵�",
+                                                        "title":"计入下期账单",
                                                         "fcode":"insExpCom_detailed_entNext"
                                                     }
                                                 ]
                                             },
                                             {
-                                                "title":"ȷ�϶���",
+                                                "title":"确认对账",
                                                 "fcode":"insExpCom_confirmRec"
                                             },
                                             {
-                                                "title":"��Ʊ��Ϣ",
+                                                "title":"发票信息",
                                                 "fcode":"insExpCom_invoice"
                                             },
                                             {
-                                                "title":"ȷ����Ʊ",
+                                                "title":"确认收票",
                                                 "fcode":"insExpCom_confirmReceipt"
                                             },
                                             {
-                                                "title":"ȷ�ϴ��",
+                                                "title":"确认打款",
                                                 "fcode":"insExpCom_confirmMoney"
                                             }
                                         ]
@@ -691,7 +691,7 @@
                                 ]
                             },
                             {
-                                "title":"ͳ�Ƹ���",
+                                "title":"统计概览",
                                 "type":"default",
                                 "fcode":"insStatis",
                                 "funname":"insStatis()"
@@ -699,203 +699,203 @@
                         ]
                     },
                     {
-                        "title":"���͹�˾",
+                        "title":"经纪公司",
                         "type":"select",
                         "fcode":"manageBrokers",
                         "tree":[
                             {
-                                "title":"����",
+                                "title":"收入",
                                 "type":"default",
                                 "fcode":"brokersIn",
                                 "funname":"brokersIn()",
                                 "power":[
                                     {
-                                        "title":"��ѯ",
+                                        "title":"查询",
                                         "fcode":"brokersIn_query"
                                     },
                                     {
-                                        "title":"����excel",
+                                        "title":"导出excel",
                                         "fcode":"brokersIn_export"
                                     },
                                     {
-                                        "title":"�鿴��ϸ",
+                                        "title":"查看明细",
                                         "fcode":"brokersIn_detailed",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"brokersIn_detailed_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"brokersIn_detailed_export"
                                             }
                                         ]
                                     },
                                     {
-                                        "title":"ȷ�϶���",
+                                        "title":"确认对账",
                                         "fcode":"brokersIn_confirmRec"
                                     },
                                     {
-                                        "title":"ȷ�Ͽ�Ʊ",
+                                        "title":"确认开票",
                                         "fcode":"brokersIn_Bill"
                                     },
                                     {
-                                        "title":"ȷ���տ�",
+                                        "title":"确认收款",
                                         "fcode":"brokersIn_receivMoney"
                                     }
                                 ]
                             },
                             {
-                                "title":"֧��",
+                                "title":"支出",
                                 "type":"dropDown",
                                 "fcode":"brokersExp",
                                 "tree":[
                                     {
-                                        "title":"�̻�",
+                                        "title":"商户",
                                         "type":"option",
                                         "fcode":"brokersExpCom",
                                         "funname":"brokersExpCom()",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"brokersExpCom_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"brokersExpCom_export"
                                             },
                                             {
-                                                "title":"�鿴��ϸ",
+                                                "title":"查看明细",
                                                 "fcode":"brokersExpCom_detailed",
                                                 "power":[
                                                     {
-                                                        "title":"��ѯ",
+                                                        "title":"查询",
                                                         "fcode":"brokersExpCom_detailed_query"
                                                     },
                                                     {
-                                                        "title":"����excel",
+                                                        "title":"导出excel",
                                                         "fcode":"brokersExpCom_detailed_export"
                                                     },
                                                     {
-                                                        "title":"���������˵�",
+                                                        "title":"计入下期账单",
                                                         "fcode":"brokersExpCom_detailed_entNext"
                                                     }
                                                 ]
                                             },
                                             {
-                                                "title":"ȷ�϶���",
+                                                "title":"确认对账",
                                                 "fcode":"brokersExpCom_confirmRec"
                                             },
                                             {
-                                                "title":"��Ʊ��Ϣ",
+                                                "title":"发票信息",
                                                 "fcode":"brokersExpCom_invoice"
                                             },
                                             {
-                                                "title":"ȷ����Ʊ",
+                                                "title":"确认收票",
                                                 "fcode":"brokersExpCom_confirmReceipt"
                                             },
                                             {
-                                                "title":"ȷ�ϴ��",
+                                                "title":"确认打款",
                                                 "fcode":"brokersExpCom_confirmMoney"
                                             }
                                         ]
                                     },
                                     {
-                                        "title":"ƽ̨",
+                                        "title":"平台",
                                         "type":"option",
                                         "fcode":"brokersExpPlat",
                                         "funname":"brokersExpPlat()",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"brokersExpPlat_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"brokersExpPlat_export"
                                             },
                                             {
-                                                "title":"�鿴��ϸ",
+                                                "title":"查看明细",
                                                 "fcode":"brokersExpPlat_detailed",
                                                 "power":[
                                                     {
-                                                        "title":"��ѯ",
+                                                        "title":"查询",
                                                         "fcode":"brokersExpPlat_detailed_query"
                                                     },
                                                     {
-                                                        "title":"����excel",
+                                                        "title":"导出excel",
                                                         "fcode":"brokersExpPlat_detailed_export"
                                                     },
                                                     {
-                                                        "title":"���������˵�",
+                                                        "title":"计入下期账单",
                                                         "fcode":"brokersExpPlat_detailed_entNext"
                                                     }
                                                 ]
                                             },
                                             {
-                                                "title":"ȷ�϶���",
+                                                "title":"确认对账",
                                                 "fcode":"brokersExpPlat_confirmRec"
                                             },
                                             {
-                                                "title":"��Ʊ��Ϣ",
+                                                "title":"发票信息",
                                                 "fcode":"brokersExpPlat_invoice"
                                             },
                                             {
-                                                "title":"ȷ����Ʊ",
+                                                "title":"确认收票",
                                                 "fcode":"brokersExpPlat_confirmReceipt"
                                             },
                                             {
-                                                "title":"ȷ�ϴ��",
+                                                "title":"确认打款",
                                                 "fcode":"brokersExpPlat_confirmMoney"
                                             }
                                         ]
                                     },
                                     {
-                                        "title":"���չ�˾",
+                                        "title":"保险公司",
                                         "type":"option",
                                         "fcode":"brokersExpIns",
                                         "funname":"brokersExpIns()",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"brokersExpIns_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"brokersExpIns_export"
                                             },
                                             {
-                                                "title":"�鿴��ϸ",
+                                                "title":"查看明细",
                                                 "fcode":"brokersExpIns_detailed",
                                                 "power":[
                                                     {
-                                                        "title":"��ѯ",
+                                                        "title":"查询",
                                                         "fcode":"brokersExpIns_detailed_query"
                                                     },
                                                     {
-                                                        "title":"����excel",
+                                                        "title":"导出excel",
                                                         "fcode":"brokersExpIns_detailed_export"
                                                     },
                                                     {
-                                                        "title":"���������˵�",
+                                                        "title":"计入下期账单",
                                                         "fcode":"brokersExpIns_detailed_entNext"
                                                     }
                                                 ]
                                             },
                                             {
-                                                "title":"ȷ�϶���",
+                                                "title":"确认对账",
                                                 "fcode":"brokersExpIns_confirmRec"
                                             },
                                             {
-                                                "title":"��Ʊ��Ϣ",
+                                                "title":"发票信息",
                                                 "fcode":"brokersExpIns_invoice"
                                             },
                                             {
-                                                "title":"ȷ����Ʊ",
+                                                "title":"确认收票",
                                                 "fcode":"brokersExpIns_confirmReceipt"
                                             },
                                             {
-                                                "title":"ȷ�ϴ��",
+                                                "title":"确认打款",
                                                 "fcode":"brokersExpIns_confirmMoney"
                                             }
                                         ]
@@ -903,7 +903,7 @@
                                 ]
                             },
                             {
-                                "title":"ͳ�Ƹ���",
+                                "title":"统计概览",
                                 "type":"default",
                                 "fcode":"brokersStatis",
                                 "funname":"brokersStatis()"
@@ -911,95 +911,95 @@
                         ]
                     },
                     {
-                        "title":"ƽ̨��Ӫ",
+                        "title":"平台运营",
                         "type":"select",
                         "fcode":"managePlat",
                         "tree":[
                             {
-                                "title":"����",
+                                "title":"收入",
                                 "type":"dropDown",
                                 "fcode":"platIn",
                                 "tree":[
                                     {
-                                        "title":"���չ�˾",
+                                        "title":"保险公司",
                                         "type":"option",
                                         "fcode":"platInIns",
                                         "funname":"platInIns()",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"platInIns_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"platInIns_export"
                                             },
                                             {
-                                                "title":"�鿴��ϸ",
+                                                "title":"查看明细",
                                                 "fcode":"platInIns_detailed",
                                                 "power":[
                                                     {
-                                                        "title":"��ѯ",
+                                                        "title":"查询",
                                                         "fcode":"platInIns_detailed_query"
                                                     },
                                                     {
-                                                        "title":"����excel",
+                                                        "title":"导出excel",
                                                         "fcode":"platInIns_detailed_export"
                                                     }
                                                 ]
                                             },
                                             {
-                                                "title":"ȷ�϶���",
+                                                "title":"确认对账",
                                                 "fcode":"platInIns_confirmRec"
                                             },
                                             {
-                                                "title":"ȷ�Ͽ�Ʊ",
+                                                "title":"确认开票",
                                                 "fcode":"platInIns_Bill"
                                             },
                                             {
-                                                "title":"ȷ���տ�",
+                                                "title":"确认收款",
                                                 "fcode":"platInIns_receivMoney"
                                             }
                                         ]
                                     },
                                     {
-                                        "title":"���͹�˾",
+                                        "title":"经纪公司",
                                         "type":"option",
                                         "fcode":"platInBrokers",
                                         "funname":"platInBrokers()",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"platInBrokers_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"platInBrokers_export"
                                             },
                                             {
-                                                "title":"�鿴��ϸ",
+                                                "title":"查看明细",
                                                 "fcode":"platInBrokers_detailed",
                                                 "power":[
                                                     {
-                                                        "title":"��ѯ",
+                                                        "title":"查询",
                                                         "fcode":"platInBrokers_detailed_query"
                                                     },
                                                     {
-                                                        "title":"����excel",
+                                                        "title":"导出excel",
                                                         "fcode":"platInBrokers_detailed_export"
                                                     }
                                                 ]
                                             },
                                             {
-                                                "title":"ȷ�϶���",
+                                                "title":"确认对账",
                                                 "fcode":"platInBrokers_confirmRec"
                                             },
                                             {
-                                                "title":"ȷ�Ͽ�Ʊ",
+                                                "title":"确认开票",
                                                 "fcode":"platInBrokers_Bill"
                                             },
                                             {
-                                                "title":"ȷ���տ�",
+                                                "title":"确认收款",
                                                 "fcode":"platInBrokers_receivMoney"
                                             }
                                         ]
@@ -1007,98 +1007,98 @@
                                 ]
                             },
                             {
-                                "title":"֧��",
+                                "title":"支出",
                                 "type":"dropDown",
                                 "fcode":"platExp",
                                 "tree":[
                                     {
-                                        "title":"�̻�",
+                                        "title":"商户",
                                         "type":"option",
                                         "fcode":"platExpCom",
                                         "funname":"platExpCom()",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"platExpCom_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"platExpCom_export"
                                             },
                                             {
-                                                "title":"�鿴��ϸ",
+                                                "title":"查看明细",
                                                 "fcode":"platExpCom_detailed",
                                                 "power":[
                                                     {
-                                                        "title":"��ѯ",
+                                                        "title":"查询",
                                                         "fcode":"platExpCom_detailed_query"
                                                     },
                                                     {
-                                                        "title":"����excel",
+                                                        "title":"导出excel",
                                                         "fcode":"platExpCom_detailed_export"
                                                     }
                                                 ]
                                             },
                                             {
-                                                "title":"ȷ�϶���",
+                                                "title":"确认对账",
                                                 "fcode":"platExpCom_confirmRec"
                                             },
                                             {
-                                                "title":"��Ʊ��Ϣ",
+                                                "title":"发票信息",
                                                 "fcode":"platExpCom_invoice"
                                             },
                                             {
-                                                "title":"ȷ����Ʊ",
+                                                "title":"确认收票",
                                                 "fcode":"platExpCom_confirmReceipt"
                                             },
                                             {
-                                                "title":"ȷ�ϴ��",
+                                                "title":"确认打款",
                                                 "fcode":"platExpCom_confirmMoney"
                                             }
                                         ]
                                     },
                                     {
-                                        "title":"����",
+                                        "title":"渠道",
                                         "type":"option",
                                         "fcode":"platExpChannel",
                                         "funname":"platExpChannel()",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"platExpChannel_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"platExpChannel_export"
                                             },
                                             {
-                                                "title":"�鿴��ϸ",
+                                                "title":"查看明细",
                                                 "fcode":"platExpChannel_detailed",
                                                 "power":[
                                                     {
-                                                        "title":"��ѯ",
+                                                        "title":"查询",
                                                         "fcode":"platExpChannel_detailed_query"
                                                     },
                                                     {
-                                                        "title":"����excel",
+                                                        "title":"导出excel",
                                                         "fcode":"platExpChannel_detailed_export"
                                                     }
                                                 ]
                                             },
                                             {
-                                                "title":"ȷ�϶���",
+                                                "title":"确认对账",
                                                 "fcode":"platExpChannel_confirmRec"
                                             },
                                             {
-                                                "title":"��Ʊ��Ϣ",
+                                                "title":"发票信息",
                                                 "fcode":"platExpChannel_invoice"
                                             },
                                             {
-                                                "title":"ȷ����Ʊ",
+                                                "title":"确认收票",
                                                 "fcode":"platExpChannel_confirmReceipt"
                                             },
                                             {
-                                                "title":"ȷ�ϴ��",
+                                                "title":"确认打款",
                                                 "fcode":"platExpChannel_confirmMoney"
                                             }
                                         ]
@@ -1106,7 +1106,7 @@
                                 ]
                             },
                             {
-                                "title":"ͳ�Ƹ���",
+                                "title":"统计概览",
                                 "type":"default",
                                 "fcode":"platStatis",
                                 "funname":"platStatis()"
@@ -1114,58 +1114,58 @@
                         ]
                     },
                     {
-                        "title":"��������",
+                        "title":"销售渠道",
                         "type":"select",
                         "fcode":"manageChannel",
                         "tree":[
                             {
-                                "title":"����",
+                                "title":"收入",
                                 "type":"default",
                                 "fcode":"channelIn",
                                 "funname":"channelIn()",
                                 "power":[
                                     {
-                                        "title":"��ѯ",
+                                        "title":"查询",
                                         "fcode":"channelIn_query"
                                     },
                                     {
-                                        "title":"����excel",
+                                        "title":"导出excel",
                                         "fcode":"channelIn_export"
                                     },
                                     {
-                                        "title":"�鿴��ϸ",
+                                        "title":"查看明细",
                                         "fcode":"channelIn_detailed",
                                         "power":[
                                             {
-                                                "title":"��ѯ",
+                                                "title":"查询",
                                                 "fcode":"channelIn_detailed_query"
                                             },
                                             {
-                                                "title":"����excel",
+                                                "title":"导出excel",
                                                 "fcode":"channelIn_detailed_export"
                                             },
                                             {
-                                                "title":"���������˵�",
+                                                "title":"计入下期账单",
                                                 "fcode":"channelIn_detailed_entNext"
                                             }
                                         ]
                                     },
                                     {
-                                        "title":"ȷ�϶���",
+                                        "title":"确认对账",
                                         "fcode":"channelIn_confirmRec"
                                     },
                                     {
-                                        "title":"ȷ�Ͽ�Ʊ",
+                                        "title":"确认开票",
                                         "fcode":"channelIn_Bill"
                                     },
                                     {
-                                        "title":"ȷ���տ�",
+                                        "title":"确认收款",
                                         "fcode":"channelIn_receivMoney"
                                     }
                                 ]
                             },
                             {
-                                "title":"ͳ�Ƹ���",
+                                "title":"统计概览",
                                 "type":"default",
                                 "fcode":"channelStatis",
                                 "funname":"channelStatis()"
@@ -1175,118 +1175,118 @@
                 ]
             },
             {
-                "title":"��������",
+                "title":"结算渠道",
                 "type":"iocn",
                 "fcode":"statemChan",
                 "tree":[
                     {
-                        "title":"���չ�˾",
+                        "title":"保险公司",
                         "type":"default",
                         "fcode":"chanIns",
                         "funname":"chanIns()",
                         "power":[
                             {
-                                "title":"���",
+                                "title":"添加",
                                 "fcode":"chanIns_add"
                             },
                             {
-                                "title":"ɾ��",
+                                "title":"删除",
                                 "fcode":"chanIns_delete"
                             },
                             {
-                                "title":"����",
+                                "title":"禁用",
                                 "fcode":"chanIns_disabled"
                             },
                             {
-                                "title":"�������",
+                                "title":"解除禁用",
                                 "fcode":"chanIns_enabled"
                             },
                             {
-                                "title":"�༭",
+                                "title":"编辑",
                                 "fcode":"chanIns_edit"
                             }
                         ]
                     },
                     {
-                        "title":"���͹�˾",
+                        "title":"经纪公司",
                         "type":"default",
                         "fcode":"chanBrokers",
                         "funname":"chanBrokers()",
                         "power":[
                             {
-                                "title":"���",
+                                "title":"添加",
                                 "fcode":"chanBrokers_add"
                             },
                             {
-                                "title":"ɾ��",
+                                "title":"删除",
                                 "fcode":"chanBrokers_delete"
                             },
                             {
-                                "title":"����",
+                                "title":"禁用",
                                 "fcode":"chanBrokers_disabled"
                             },
                             {
-                                "title":"�������",
+                                "title":"解除禁用",
                                 "fcode":"chanBrokers_enabled"
                             },
                             {
-                                "title":"�༭",
+                                "title":"编辑",
                                 "fcode":"chanBrokers_edit"
                             }
                         ]
                     },
                     {
-                        "title":"VIP�̻�",
+                        "title":"VIP商户",
                         "type":"default",
                         "fcode":"chanVIP",
                         "funname":"chanVIP()",
                         "power":[
                             {
-                                "title":"��ѯ",
+                                "title":"查询",
                                 "fcode":"chanVIP_query"
                             },
                             {
-                                "title":"����",
+                                "title":"禁用",
                                 "fcode":"chanVIP_disabled"
                             },
                             {
-                                "title":"�������",
+                                "title":"解除禁用",
                                 "fcode":"chanVIP_enabled"
                             },
                             {
-                                "title":"VIP����",
+                                "title":"VIP费率",
                                 "fcode":"chanVIP_becomeVIP"
                             },
                             {
-                                "title":"ȡ��VIP",
+                                "title":"取消VIP",
                                 "fcode":"chanVIP_cancelVIP"
                             }
                         ]
                     },
                     {
-                        "title":"��������",
+                        "title":"销售渠道",
                         "type":"default",
                         "fcode":"chanChannel",
                         "funname":"chanChannel()",
                         "power":[
                             {
-                                "title":"���",
+                                "title":"添加",
                                 "fcode":"chanChannel_add"
                             },
                             {
-                                "title":"ɾ��",
+                                "title":"删除",
                                 "fcode":"chanChannel_delete"
                             },
                             {
-                                "title":"����",
+                                "title":"禁用",
                                 "fcode":"chanChannel_disabled"
                             },
                             {
-                                "title":"�������",
+                                "title":"解除禁用",
                                 "fcode":"chanChannel_enabled"
                             },
                             {
-                                "title":"�༭",
+                                "title":"编辑",
                                 "fcode":"chanChannel_edit"
                             }
                         ]
@@ -1296,91 +1296,91 @@
         ]
     },
     {
-        "title":"����",
+        "title":"配置",
         "fcode":"config",
         "funname":"",
         "tree":[
             {
-                "title":"Ȩ������",
+                "title":"权限配置",
                 "type":"iocn",
                 "fcode":"powerConfig",
                 "tree":[
                     {
-                        "title":"��ɫ����",
+                        "title":"角色管理",
                         "type":"default",
                         "fcode":"roleAdmin",
                         "funname":"roleAdmin()",
                         "power":[
                             {
-                                "title":"��ѯ",
+                                "title":"查询",
                                 "fcode":"roleAdmin_query"
                             },
                             {
-                                "title":"���",
+                                "title":"添加",
                                 "fcode":"roleAdmin_add"
                             },
                             {
-                                "title":"ɾ��",
+                                "title":"删除",
                                 "fcode":"roleAdmin_delete"
                             },
                             {
-                                "title":"����",
+                                "title":"禁用",
                                 "fcode":"roleAdmin_disabled"
                             },
                             {
-                                "title":"�������",
+                                "title":"解除禁用",
                                 "fcode":"roleAdmin_enabled"
                             },
                             {
-                                "title":"�༭",
+                                "title":"编辑",
                                 "fcode":"roleAdmin_edit"
                             }
                         ]
                     },
                     {
-                        "title":"�˺��б�",
+                        "title":"账号列表",
                         "type":"default",
                         "fcode":"accountLists",
                         "funname":"accountLists()",
                         "power":[
                             {
-                                "title":"��ѯ",
+                                "title":"查询",
                                 "fcode":"accountLists_query"
                             },
                             {
-                                "title":"���",
+                                "title":"添加",
                                 "fcode":"accountLists_add"
                             },
                             {
-                                "title":"ɾ��",
+                                "title":"删除",
                                 "fcode":"accountLists_delete"
                             },
                             {
-                                "title":"����",
+                                "title":"禁用",
                                 "fcode":"accountLists_disabled"
                             },
                             {
-                                "title":"�������",
+                                "title":"解除禁用",
                                 "fcode":"accountLists_enabled"
                             },
                             {
-                                "title":"�༭",
+                                "title":"编辑",
                                 "fcode":"accountLists_edit"
                             },
                             {
-                                "title":"��������",
+                                "title":"重置密码",
                                 "fcode":"accountLists_reset"
                             }
                         ]
                     },
                     {
-                        "title":"������־",
+                        "title":"操作日志",
                         "type":"default",
                         "fcode":"operLog",
                         "funname":"operLog()",
                         "power":[
                             {
-                                "title":"��ѯ",
+                                "title":"查询",
                                 "fcode":"operLog_query"
                             }
                         ]
@@ -1388,115 +1388,115 @@
                 ]
             },
             {
-                "title":"�ĵ�����",
+                "title":"文档中心",
                 "type":"icon",
                 "fcode":"fileManage",
                 "tree":[
                     {
-                        "title":"ͨ���ĵ�",
+                        "title":"通用文档",
                         "type":"default",
                         "fcode":"generalFile",
                         "funname":"generalFile()",
                         "power":[
                             {
-                                "title":"��ѯ",
+                                "title":"查询",
                                 "fcode":"generalFile_query"
                             },
                             {
-                                "title":"���",
+                                "title":"添加",
                                 "fcode":"generalFile_add"
                             },
                             {
-                                "title":"�༭",
+                                "title":"编辑",
                                 "fcode":"generalFile_edit"
                             },
                             {
-                                "title":"��������",
+                                "title":"复制链接",
                                 "fcode":"libFileDownload_copy"
                             }
                         ]
                     },
                     {
-                        "title":"��Ʒ�ĵ�",
+                        "title":"产品文档",
                         "type":"default",
                         "fcode":"productFile",
                         "funname":"productFile()",
                         "power":[
                             {
-                                "title":"��Ʒ���",
+                                "title":"产品添加",
                                 "fcode":"productFile_productAdd"
                             },
                             {
-                                "title":"�ĵ����",
+                                "title":"文档添加",
                                 "fcode":"productFile_FileAdd"
                             },
                             {
-                                "title":"�༭",
+                                "title":"编辑",
                                 "fcode":"productFile_edit"
                             },
                             {
-                                "title":"��������",
+                                "title":"复制链接",
                                 "fcode":"libFileDownload_copy"
                             }
                         ]
                     },
                     {
-                        "title":"�ĵ���",
+                        "title":"文档库",
                         "type":"dropDown",
                         "fcode":"libFile",
                         "tree":[
                             {
-                                "title":"��Ʒ�ĵ���",
+                                "title":"产品文档库",
                                 "type":"option",
                                 "fcode":"libFileProduct",
                                 "funname":"libFileProduct()",
                                 "power":[
                                     {
-                                        "title":"��ѯ",
+                                        "title":"查询",
                                         "fcode":"libFileProduct_query"
                                     },
                                     {
-                                        "title":"Ԥ��",
+                                        "title":"预览",
                                         "fcode":"libFileProduct_show"
                                     },
                                     {
-                                        "title":"��������",
+                                        "title":"复制链接",
                                         "fcode":"libFileDownload_copy"
                                     }
                                 ]
                             },
                             {
-                                "title":"ͨ���ĵ���",
+                                "title":"通用文档库",
                                 "type":"option",
                                 "fcode":"libFileCurrent",
                                 "funname":"libFileCurrent()",
                                 "power":[
                                     {
-                                        "title":"��ѯ",
+                                        "title":"查询",
                                         "fcode":"libFileCurrent_query"
                                     },
                                     {
-                                        "title":"Ԥ��",
+                                        "title":"预览",
                                         "fcode":"libFileCurrent_show"
                                     },
                                     {
-                                        "title":"��������",
+                                        "title":"复制链接",
                                         "fcode":"libFileDownload_copy"
                                     }
                                 ]
                             },
                             {
-                                "title":"���ذ���",
+                                "title":"下载包库",
                                 "type":"option",
                                 "fcode":"libFileDownload",
                                 "funname":"libFileDownload()",
                                 "power":[
                                     {
-                                        "title":"��ѯ",
+                                        "title":"查询",
                                         "fcode":"libFileDownload_query"
                                     },
                                     {
-                                        "title":"��������",
+                                        "title":"复制链接",
                                         "fcode":"libFileDownload_copy"
                                     }
                                 ]

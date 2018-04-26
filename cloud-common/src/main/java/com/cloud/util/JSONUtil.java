@@ -1,6 +1,7 @@
 package com.cloud.util;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.cloud.constant.MessageConstant;
 import com.cloud.result.ResultBean;
@@ -60,6 +61,10 @@ public class JSONUtil {
      */
     public static JSONObject strParseJSONObject(String str) {
         return JSON.parseObject(str);
+    }
+
+    public static JSONArray getJSONArray(String str){
+        return (JSONArray) JSON.parse(str);
     }
 
     /**
