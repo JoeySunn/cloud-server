@@ -32,28 +32,36 @@ public class Role {
 
     private List<LeftTree> leftTrees = new ArrayList<LeftTree>();
 
-    private PowerUtil powerUtil=new PowerUtil();
+    private PowerUtil powerUtil = new PowerUtil();
 
 
     public void findByUser() {
-        String content = FileUtil.getFileContent("properties/powerTree.json");
         String code = "company";
         String code1 = "order";
         String code2 = "product";
         String code3 = "statements";
         String code4 = "config";
-//        List<RoleTree> roleList = new ArrayList<>();
         User user = userService.findUserById(1);
-//        List<LeftTree> leftTrees = getLeftTree(code, (JSONArray) JSON.parse(user.getRole().getRoleCode()), roles);
         getLeftTree(code, JSONUtil.getJSONArray(user.getRole().getRoleCode()));
     }
+
+    public List<LeftTree> getHeadMenu(String code) {
+        JSONArray jsonArray = JSON.parseArray(code);
+        List<LeftTree> leftTrees = new ArrayList<>();
+        for (Object object : jsonArray) {
+            JSONObject jsonObject = (JSONObject) object;
+            leftTrees.add(powerUtil.setTree(jsonObject));
+        }
+        return leftTrees;
+    }
+
 
     /**
      * 获得用户对应的权限
      *
      * @return
      */
-    void getLeftTree(String code, Object object) {
+    public List<LeftTree> getLeftTree(String code, Object object) {
         JSONArray jsonArray = (JSONArray) object;
         for (Object obj : jsonArray) {
             JSONObject jsonObject = (JSONObject) obj;
@@ -62,6 +70,7 @@ public class Role {
                 break;
             }
         }
+        return leftTrees;
     }
 
     void setLeftMenu(JSONArray jsonArray) {
@@ -107,7 +116,7 @@ public class Role {
     }
 
     String getCode(JSONObject jsonObject) {
-        return jsonObject.getString("tree");
+        return jsonObject.getString("fcode");
     }
 
     JSONArray getPower(JSONObject jsonObject) {
@@ -117,9 +126,6 @@ public class Role {
     JSONArray getTree(JSONObject jsonObject) {
         return JSON.parseArray(jsonObject.getString("tree"));
     }
-
-
-
 
 
 }

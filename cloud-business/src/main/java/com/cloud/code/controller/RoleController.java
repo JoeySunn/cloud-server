@@ -3,7 +3,7 @@ package com.cloud.code.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.cloud.code.model.role.Role;
 import com.cloud.code.service.RoleService;
-import com.cloud.constant.MessageConstant;
+import com.cloud.controller.BaseController;
 import com.cloud.util.JSONUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,8 +26,8 @@ import javax.annotation.Resource;
  **/
 @RestController
 @RequestMapping("role")
-@Api(value = "RoleController",description = "角色控制层")
-public class RoleController {
+@Api(value = "RoleController", description = "角色控制层")
+public class RoleController extends BaseController {
     @Resource
     private RoleService roleService;
 
@@ -36,20 +36,20 @@ public class RoleController {
     @PostMapping("add_role")
     @ResponseBody
     public JSONObject addRole(
-            @ApiParam(name = "role",value = "用户角色")
-            @RequestBody Role role){
-        if(roleService.addRole(role)!=null){
-            return JSONUtil.finalData(new Role(), MessageConstant.INSERT_MESSAGE_OK, MessageConstant.OK);
+            @ApiParam(name = "role", value = "用户角色")
+            @RequestBody Role role) {
+        if (roleService.addRole(role) != null) {
+            return JSONUtil.finalData(new Role(), success, ok);
         }
-        return JSONUtil.finalData(null, MessageConstant.INSERT_MESSAGE_ERROR, MessageConstant.NO);
+        return JSONUtil.finalData(null, error, no);
     }
 
 
     @ApiOperation(value = "修改角色")
     @PostMapping("update_role")
     @ResponseBody
-    public JSONObject updateRole(@ApiParam(name = "role",value = "用户角色")
-                                 @RequestBody Role role){
+    public JSONObject updateRole(@ApiParam(name = "role", value = "用户角色")
+                                 @RequestBody Role role) {
         return null;
     }
 }

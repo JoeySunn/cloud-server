@@ -1,8 +1,8 @@
 package com.cloud.controller;
 
+import com.cloud.constant.MessageConstant;
 import com.cloud.result.ResultBean;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -18,8 +18,16 @@ import javax.servlet.http.HttpServletRequest;
  * @Version: 1.0
  **/
 public class BaseController {
-    @Resource
+
     protected HttpServletRequest request;
 
     protected ResultBean<Object> resultBean = new ResultBean<>();
+    //操作成功
+    protected  String success=MessageConstant.SUCCESS;
+
+    protected String error=MessageConstant.ERROR;
+
+    protected Boolean ok=MessageConstant.OK;
+
+    protected Boolean no=MessageConstant.NO;
 }

@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.cloud.constant.MessageConstant;
 import com.cloud.result.ResultBean;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import java.util.HashMap;
 import java.util.List;
@@ -114,6 +113,17 @@ public class JSONUtil {
     }
 
     /**
+     * 运行成功，但是有提示消息
+     * @param object
+     * @param message
+     * @return
+     */
+    public static JSONObject successMessage(Object object,String message){
+        ResultBean<Object> resultBean = new ResultBean<>();
+        return JSONUtil.parseResultBean(resultBean.content(object, message, true));
+    }
+
+    /**
      * 没有错误，返回查询到的实体
      * @param t
      * @param <T>
@@ -121,7 +131,7 @@ public class JSONUtil {
      */
     public static<T> JSONObject successData(T t){
         ResultBean<Object> resultBean = new ResultBean<>();
-        return JSONUtil.parseResultBean(resultBean.content(new Object(), MessageConstant.SUCCESS, MessageConstant.NO));
+        return JSONUtil.parseResultBean(resultBean.content(t, MessageConstant.SUCCESS, MessageConstant.NO));
     }
 
 

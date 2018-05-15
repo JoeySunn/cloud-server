@@ -1,13 +1,5 @@
 package com.cloud.dao;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-
-import javax.annotation.Resource;
-import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-
 /**
  * 作用描述
  *

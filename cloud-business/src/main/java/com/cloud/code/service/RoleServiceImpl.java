@@ -47,4 +47,6 @@ public class RoleServiceImpl implements RoleService {
     public Role addRole(Role role) {
         return roleDao.save(role);
     }
+
+
 }

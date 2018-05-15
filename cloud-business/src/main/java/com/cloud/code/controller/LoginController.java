@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * 作用描述
  *
@@ -46,5 +48,15 @@ public class LoginController extends BaseController {
         }
         resultBean.data(user);
         return JSONUtil.parseResultBean(resultBean);
+    }
+
+    @ApiOperation(value = "退出登陆",httpMethod = "POST")
+    @ResponseBody
+    @PostMapping(value = "/out_login")
+    public JSONObject exitUser(@ApiParam(name = "id",value = "用户Id")
+                               @RequestParam(value = "id")Integer id,
+                               HttpSession session){
+        session.removeAttribute("user");
+        return null;
     }
 }
